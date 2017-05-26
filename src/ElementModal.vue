@@ -67,6 +67,14 @@
                             </tbody>
                         </table>
                     </div>
+                    <div class="modal-footer">
+                        <div class="modal-tag" :class="'e-'+element.groupBlock.replace(new RegExp(' ', 'g'), '-')">
+                            <a :href="'https://www.wikipedia.org/wiki/'+element.name" target="_blank">
+                                <icon class="modal-tag-icon" name="wikipedia-w" scale="1"></icon>
+                                {{element.name}} on Wikipedia
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -165,6 +173,35 @@ export default {
     padding: 8px;
     color: white;
     text-align: left;
+}
+
+.table {
+    margin-bottom: 0px;
+}
+
+.modal-footer {
+    padding: 8px;
+    border-radius: 0px 0px 6px 6px;
+    background-color: #3C3C3C;
+    color: white;
+    text-align: right;
+    overflow: auto;
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75);
+}
+
+.modal-footer a{
+    color: #2C2C2C;
+}
+
+.modal-tag {
+    padding-right: 8px;
+    border-radius: 18px;
+    float: right;
+}
+
+.modal-tag-icon {
+    float: left;
+    margin: 6px;
 }
 
 /* Element groups */

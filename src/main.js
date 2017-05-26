@@ -7,6 +7,7 @@ import Icon from 'vue-awesome/components/Icon.vue'
 import 'vue-awesome/icons/circle'
 import 'vue-awesome/icons/flask'
 import 'vue-awesome/icons/times'
+import 'vue-awesome/icons/wikipedia-w'
 Icon.register({
     vue: {
         width: 256,
