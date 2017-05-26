@@ -143,7 +143,8 @@ export default {
 
 .modal-element-symbol {
     height: 40px;
-    margin-top: 10px;
+    margin-top: 6px;
+    margin-bottom: 4px;
     font-size: 40px;
 }
 
