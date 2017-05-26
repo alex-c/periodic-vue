@@ -1,6 +1,6 @@
 # periodic-vue
 
-> A simple periodic table built with Vue. Visit the demo: https://alex-c.github.io/periodic-vue/
+> A simple periodic table built with Vue. Visit the [demo](https://alex-c.github.io/periodic-vue/)!
 
 ## Build Setup
 
