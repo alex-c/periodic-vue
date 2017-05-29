@@ -15,13 +15,30 @@
                 <div @mouseenter="highlight" @mouseleave="reset" data-element-group="actinoid" class="button is-small b-actinoid">Actinoids</div>
                 <div @mouseenter="highlight" @mouseleave="reset" data-element-group="post-transition-metal" class="button is-small b-post-transition-metal">Post transition metals</div>
             </div>
-            <chemical-element   v-for="element in elementsData"
-                                :key="element.atomicNumber"
-                                :element="element"
-                                :highlightedElementGroup="highlightedElementGroup"
-                                :class="buildElementClasses(element)"
-                                @showModal="triggerModal">
-            </chemical-element>
+            <container width="100%">
+                <grid>
+                    <grid-item size="1/18" v-for="element in elementsData" :key="element.atomicNumber" v-if="element.symbol && isOnMainTable(element)">
+                        <chemical-element   :element="element"
+                                            :highlightedElementGroup="highlightedElementGroup"
+                                            :class="buildElementClasses(element)"
+                                            @showModal="triggerModal">
+                        </chemical-element>
+                    </grid-item>
+                    <grid-item size="16/18" v-else-if="element.placeholder && element.placeholder==16"></grid-item>
+                    <grid-item size="10/18" v-else-if="element.placeholder && element.placeholder==10"></grid-item>
+                </grid>
+                <grid>
+                    <grid-item size="3/18"></grid-item>
+                    <grid-item size="1/18" v-for="element in elementsData" :key="element.atomicNumber" v-if="element.symbol && !isOnMainTable(element)">
+                        <chemical-element   :element="element"
+                                            :highlightedElementGroup="highlightedElementGroup"
+                                            :class="buildElementClasses(element)"
+                                            @showModal="triggerModal">
+                        </chemical-element>
+                    </grid-item>
+                    <grid-item size="3/18" v-else-if="element.placeholder && element.placeholder==3"></grid-item>
+                </grid>
+            </container>
             <element-modal v-if="showModal" :element="modalElement" @close="showModal = false"></element-modal>
         </div>
     </div>
@@ -57,6 +74,13 @@ export default {
             }
 
         },
+        placeholderSize: function(element) {
+            return(element.placeholder+'/18')
+        },
+        isOnMainTable: function(element) {
+            var n = element.atomicNumber;
+            return(n<=57 || n>=104 || (n>=72 && n<=89));
+        },
         triggerModal: function(element) {
             this.modalElement = element;
             this.showModal = true;
@@ -85,6 +109,11 @@ export default {
     padding: 12px;
     overflow: auto;
 }
+
+.vfg-grid-item {
+    margin-bottom: 8px;
+}
+
 /* Buttons */
 .b-nonmetal {background-color: $eg-nonmetal;}
 .b-noble-gas {background-color: $eg-noble-gas;}

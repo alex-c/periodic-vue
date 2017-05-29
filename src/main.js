@@ -1,13 +1,21 @@
 //Vue
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from 'vue';
+import App from './App.vue';
+
+//Plugins
+import VueFractionGrid from 'vue-fraction-grid';
+Vue.use(VueFractionGrid, {
+    gutter: '8px'
+});
 
 //Font Awesome Icons
-import Icon from 'vue-awesome/components/Icon.vue'
-import 'vue-awesome/icons/circle'
-import 'vue-awesome/icons/flask'
-import 'vue-awesome/icons/times'
-import 'vue-awesome/icons/wikipedia-w'
+import Icon from 'vue-awesome/components/Icon.vue';
+import 'vue-awesome/icons/circle';
+import 'vue-awesome/icons/flask';
+import 'vue-awesome/icons/times';
+import 'vue-awesome/icons/wikipedia-w';
+import 'vue-awesome/icons/chevron-left';
+import 'vue-awesome/icons/chevron-right';
 Icon.register({
     vue: {
         width: 256,
@@ -24,10 +32,10 @@ Icon.register({
         ]
     }
 });
-Vue.component('icon', Icon)
+Vue.component('icon', Icon);
 
 //Main Instance
 new Vue({
   el: '#app',
   render: h => h(App)
-})
+});

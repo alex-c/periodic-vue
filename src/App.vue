@@ -17,7 +17,7 @@ export default {
             elementsData: elementsData
         }
     }
-}//@import './assets/css/font-awesome.min.css';
+}
 </script>
 
 <style>

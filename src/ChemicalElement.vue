@@ -20,10 +20,9 @@ export default {
 @import './assets/scss/variables.scss';
 
 .element {
-    width: 84px;
-    height: 90px;
-    margin: 4px;
-    float: left;
+    width: 100%;
+    min-width: 64px;
+    height: 84px;
     border-radius: 4px;
     text-align: center;
     opacity: 0.8;
@@ -45,7 +44,7 @@ export default {
 }
 
 .element-body {
-    font-size: 28px;
+    font-size: 24px;
 }
 
 .element-footer {

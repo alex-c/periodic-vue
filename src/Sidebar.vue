@@ -1,11 +1,21 @@
 <template>
     <div id="sidebar">
-        <div id="header">
-            <div id="logo-backdrop">
-                <icon name="flask" scale="7"></icon>
+        <div id="sidebar-control" v-show="!sidebarToggled">
+            <a class="button is-dark is-small" @click="sidebarToggled = true"><icon name="chevron-left"></icon> Hide</a>
+        </div>
+        <div id="sidebar-control-toggled" v-show="sidebarToggled">
+            <span @click="sidebarToggled = false">
+                <icon name="chevron-right"></icon>
+            </span>
+        </div>
+        <div id="sidebar-inner" v-show="!sidebarToggled">
+            <div id="header">
+                <div id="logo-backdrop">
+                    <icon name="flask" scale="7"></icon>
+                </div>
+                <div id="title">periodic-vue</div>
+                <icon name="vue" scale="1"></icon>
             </div>
-            <div id="title">periodic-vue</div>
-            <icon name="vue" scale="1"></icon>
         </div>
     </div>
 </template>
@@ -14,7 +24,9 @@
 export default {
     name: 'sidebar',
     data() {
-        return({});
+        return({
+            sidebarToggled: false
+        });
     }
 }
 </script>
@@ -23,7 +35,6 @@ export default {
 @import './assets/scss/variables.scss';
 
 #sidebar {
-    width: 300px;
     height: 100%;
     float: left;
     border-right: 1px solid black;
@@ -32,6 +43,32 @@ export default {
     -webkit-box-shadow: 2px 0px 3px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 2px 0px 3px 0px rgba(0,0,0,0.75);
     box-shadow: 2px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+#sidebar-control {
+    padding: 8px;
+    text-align: right;
+}
+
+#sidebar-control .fa-icon {
+    margin-right: 12px;
+}
+
+#sidebar-control-toggled {
+    height: 100%;
+    float: right;
+}
+
+#sidebar-control-toggled .fa-icon {
+    margin: 8px;
+}
+
+#sidebar-control-toggled .fa-icon:hover {
+    cursor: pointer;
+}
+
+#sidebar-inner {
+    width: 300px;
 }
 
 #header {
