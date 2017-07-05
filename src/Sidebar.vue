@@ -9,12 +9,15 @@
             </span>
         </div>
         <div id="sidebar-inner" v-show="!sidebarToggled">
-            <div id="header">
+            <div id="header" v-show="!sidebarToggled">
                 <div id="logo-backdrop">
                     <icon name="flask" scale="7"></icon>
                 </div>
                 <div id="title">periodic-vue</div>
+            </div>
+            <div id="sidebar-content">
                 <icon name="vue" scale="1"></icon>
+                <icon name="bulma" scale="1"></icon>
             </div>
         </div>
     </div>
@@ -25,7 +28,8 @@ export default {
     name: 'sidebar',
     data() {
         return({
-            sidebarToggled: false
+            sidebarToggled: false,
+            sidebarEnterDone: true
         });
     }
 }
@@ -43,6 +47,7 @@ export default {
     -webkit-box-shadow: 2px 0px 3px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 2px 0px 3px 0px rgba(0,0,0,0.75);
     box-shadow: 2px 0px 10px 0px rgba(0,0,0,0.75);
+    //background-image: url('./assets/tweed.png');
 }
 
 #sidebar-control {

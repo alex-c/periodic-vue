@@ -32,6 +32,18 @@ Icon.register({
         ]
     }
 });
+Icon.register({
+    bulma: {
+        width: 256,
+        height: 221,
+        polygons: [
+            {
+                style: 'fill: rgb(0, 209, 178)',
+                points: '70,50 50,160 125,220 200,170 150,110 200,50 125,1 70,50'
+            }
+        ]
+    }
+});
 Vue.component('icon', Icon);
 
 //Main Instance

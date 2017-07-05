@@ -102,6 +102,7 @@ export default {
 #periodic-table {
     height: 100%;
     background-color: #2C2C2C;
+    background-image: url('./assets/bg.png');
 }
 
 #table-container {
