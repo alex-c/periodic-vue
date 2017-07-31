@@ -33,4 +33,9 @@ export default {
     right: 0px;
     font-family: 'Raleway', sans-serif;
 }
+
+a:link {color: white;}
+a:hover {color: white;}
+a:active {color: white;}
+a:visited {color: white;}
 </style>

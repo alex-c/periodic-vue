@@ -16,8 +16,24 @@
                 <div id="title">periodic-vue</div>
             </div>
             <div id="sidebar-content">
-                <icon name="vue" scale="1"></icon>
-                <icon name="bulma" scale="1"></icon>
+                <div id="project-description">A simple periodic table, built as a learning project to get started with Vue! Visit the <a href="https://github.com/alex-c/periodic-vue" target="_blank">Github repository</a>.</div>
+                <div>Built with:
+                    <a href="https://www.vuejs.org" target="_blank">
+                        <div class="sidebar-link">
+                            <icon name="vue" scale="1"></icon> Vue
+                        </div>
+                    </a>
+                    <a href="http://bulma.io/" target="_blank">
+                        <div class="sidebar-link">
+                            <icon name="bulma" scale="1"></icon> Bulma
+                        </div>
+                    </a>
+                    <a href="http://fontawesome.io/" target="_blank">
+                        <div class="sidebar-link">
+                            <icon name="font-awesome" scale="1"></icon> Font Awesome
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -47,7 +63,6 @@ export default {
     -webkit-box-shadow: 2px 0px 3px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 2px 0px 3px 0px rgba(0,0,0,0.75);
     box-shadow: 2px 0px 10px 0px rgba(0,0,0,0.75);
-    //background-image: url('./assets/tweed.png');
 }
 
 #sidebar-control {
@@ -93,5 +108,45 @@ export default {
     border-radius: 70px;
     padding: 10px;
     background-color: $periodic-bg-color;
+}
+
+#sidebar-content {
+    text-align: left;
+}
+
+#sidebar-content > div {
+    margin: 16px;
+}
+
+#project-description a:link {
+    color: $periodic-bg-color;
+}
+
+#project-description a:hover {
+    color: white;
+}
+
+.sidebar-link {
+    width: 240px;
+    margin: 4px auto;
+    padding: 4px;
+    padding-left: 8px;
+    text-align: left;
+    font-size: 12px;
+    background-color: #4A4A4A;
+    border-radius: 5px;
+}
+
+.sidebar-link:hover {
+    cursor: pointer;
+    font-style: italic;
+    background-color: #5C5C5C;
+}
+
+.sidebar-link .fa-icon {
+    width: 16px;
+    height: 16px;
+    float: left;
+    margin-right: 4px;
 }
 </style>

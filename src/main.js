@@ -14,6 +14,7 @@ import 'vue-awesome/icons/circle';
 import 'vue-awesome/icons/flask';
 import 'vue-awesome/icons/times';
 import 'vue-awesome/icons/wikipedia-w';
+import 'vue-awesome/icons/font-awesome';
 import 'vue-awesome/icons/chevron-left';
 import 'vue-awesome/icons/chevron-right';
 Icon.register({
