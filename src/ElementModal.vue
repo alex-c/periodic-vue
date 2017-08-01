@@ -69,7 +69,7 @@
                     </div>
                     <div class="modal-footer">
                         <div class="modal-tag" :class="'e-'+element.groupBlock.replace(new RegExp(' ', 'g'), '-')">
-                            <a :href="'https://www.wikipedia.org/wiki/'+element.name" target="_blank">
+                            <a :href="'https://en.wikipedia.org/wiki/'+element.name" target="_blank">
                                 <icon class="modal-tag-icon" name="wikipedia-w" scale="1"></icon>
                                 {{element.name}} on Wikipedia
                             </a>
